@@ -41,7 +41,8 @@ public class GroupChatClient
         textField.setEditable(false); //Prevents the user from attempting to send messages
         messageArea.setEditable(false); //Prevents the user from altering the contents of the chat history
         frame.getContentPane().add(textField, "South"); //Place the textfield along the bottom of the frame
-        frame.getContentPane().add(new JScrollPane(messageArea), "Center"); //Create a scroll pane using the message area and center it in the frame
+        //Create a scroll pane using the message area and center it in the frame
+        frame.getContentPane().add(new JScrollPane(messageArea), "Center"); 
         frame.pack(); //confirm the layout of the frame
         textField.addActionListener(new ActionListener() 
         {
@@ -85,7 +86,8 @@ public class GroupChatClient
     }
     private void run() throws IOException {
         //Prompt the user to autoconnect or enter their own network settings
-        int autoConnectPrompt = JOptionPane.showConfirmDialog(frame,"Would you like to connect using default settings?","AutoConnect",JOptionPane.YES_NO_OPTION);
+        int autoConnectPrompt = JOptionPane.showConfirmDialog(frame,"Would you like to connect using default settings?",
+                                                              "AutoConnect",JOptionPane.YES_NO_OPTION);
         
         // Make connection and initialize streams
         if(autoConnectPrompt == JOptionPane.NO_OPTION)
